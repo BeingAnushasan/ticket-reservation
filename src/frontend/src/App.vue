@@ -1,29 +1,34 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-<!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
-    <Test/>
+    <div class="page-header">
+      <TheHeader/>
+    </div>
+    <div class="page-body">
+      <transition name="fadeIn" enter-active-class="animated fadeIn">
+        <router-view class="view"></router-view>
+      </transition>
+    </div>
+    <!--    <router-view/>-->
+    <!--    <TheFooter/>-->
   </div>
 </template>
 
 <script>
-import Test from './components/Test'
-
+import TheHeader from "@/components/TheHeader";
+// import TheFooter from "@/components/TheFooter";
 export default {
-  name: 'App',
-  components: {
-    Test
-  }
+  components: {TheHeader},
+
 }
 </script>
-
-<style>
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+
+
 </style>

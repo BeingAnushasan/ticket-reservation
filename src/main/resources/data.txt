@@ -1,0 +1,30 @@
+insert into my_user_details
+ ( id,email,full_name,username,password,balance,phone_number,account_non_expired,account_non_locked,credentials_non_expired,enabled)
+ values
+ ( UUID(), 'a@a.com', 'Ram Thapa','ramu','$2y$12$tHa4ecJCmQ4qOpmPce8cpuFNI4Dgverl9cj3p34unDAC.yUE1GD8W', '5000', '9844554472'1,1,1,1);
+
+insert into my_user_details
+ ( id,email,full_name,username,password,balance,phone_number,account_non_expired,account_non_locked,credentials_non_expired,enabled)
+ values
+ ( UUID(), 'a@a.com', 'Ram yyy','ramu1','
+$2y$12$tHa4ecJCmQ4qOpmPce8cpuFNI4Dgverl9cj3p34unDAC.yUE1GD8W', '6000', '9844554472'1,1,1,1);
+
+insert into my_user_details
+ ( id,email,full_name,username,password,balance,phone_number,account_non_expired,account_non_locked,credentials_non_expired,enabled)
+ values
+ ( UUID(), 'a@a.com', 'shyam Thapa','shyam','
+$2y$12$tHa4ecJCmQ4qOpmPce8cpuFNI4Dgverl9cj3p34unDAC.yUE1GD8W', '15000', '9844554472'1,1,1,1);
+
+insert into my_user_details
+ ( id,email,full_name,username,password,balance,phone_number,account_non_expired,account_non_locked,credentials_non_expired,enabled)
+ values
+ ( UUID(), 'a@a.com', 'hari Thapa','hari','
+$2y$12$tHa4ecJCmQ4qOpmPce8cpuFNI4Dgverl9cj3p34unDAC.yUE1GD8W', '100000', '9844554472'1,1,1,1);
+
+insert into my_user_details
+ ( id,email,full_name,username,password,balance,phone_number,account_non_expired,account_non_locked,credentials_non_expired,enabled)
+ values
+ ( UUID(), 'a@a.com', 'gita Thapa','gita','
+$2y$12$tHa4ecJCmQ4qOpmPce8cpuFNI4Dgverl9cj3p34unDAC.yUE1GD8W', '85000', '9844554472'1,1,1,1);
+
+insert into my_user_details_user_roles (my_user_details_id, user_roles) values (, 1)

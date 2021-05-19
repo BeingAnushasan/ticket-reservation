@@ -1,6 +1,5 @@
 package com.anushasan.ticketreservation.controller;
 
-import com.anushasan.ticketreservation.model.PaymentInfo;
 import com.anushasan.ticketreservation.model.User.MyUserDetails;
 import com.anushasan.ticketreservation.repository.MyUserRepo;
 import com.anushasan.ticketreservation.service.ReservationService;
@@ -14,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
 import java.util.List;
+import java.util.Map;
 
 @AllArgsConstructor
 @RestController
@@ -29,12 +29,14 @@ public class ReservationController {
         return reservationService.ReservationAcknowledgement(request, principal);
     }
 
-    public list<PaymentInfo>
-
-
     @GetMapping("/all")
     public List<MyUserDetails> getAll() {
         return userRepo.findAll();
+    }
+
+    @GetMapping("/byday")
+    public Map<String, Integer> getPaymentsByDay(){
+        return reservationService.getPaymentsByDay();
     }
 
 }

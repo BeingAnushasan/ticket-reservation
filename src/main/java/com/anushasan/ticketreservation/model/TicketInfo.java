@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @AllArgsConstructor
@@ -27,7 +28,7 @@ public class TicketInfo {
     private String arrivalTime;
     private Double price;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    private Date reservedDate;
+    private LocalDate reservedDate;
 
     @ManyToOne
     private MyUserDetails userDetails;

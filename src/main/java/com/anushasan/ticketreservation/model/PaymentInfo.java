@@ -4,12 +4,14 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.apache.tomcat.jni.Local;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -24,7 +26,7 @@ public class PaymentInfo {
     private double amount;
     private String cardType;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    private Date paidDate;
+    private LocalDate paidDate;
 
     @OneToOne
     private TicketInfo ticketInfo;

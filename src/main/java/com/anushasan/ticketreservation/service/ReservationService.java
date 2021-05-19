@@ -15,6 +15,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.security.Principal;
+import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @AllArgsConstructor
 @Service
@@ -47,5 +53,36 @@ public class ReservationService {
         paymentRepo.save(paymentInfo);
 
         return new Response("RESERVATION SUCCESSFUL", savedTicketInfo);
+    }
+
+
+
+    public Map<String, Integer> getPaymentsByDay() {
+        List<PaymentInfo> allPayments = paymentRepo.findAll();
+
+        List<String> datesInLast7Days = IntStream.rangeClosed(1, 7)
+                .mapToObj(LocalDate.now().minusDays(7)::plusDays)
+                .map(LocalDate::toString)
+                .collect(Collectors.toList());
+
+        List<PaymentInfo> listOfLast7DayInfo = allPayments.stream()
+                .filter(payment -> datesInLast7Days.contains(payment.getPaidDate().toString()))
+                .collect(Collectors.toList());
+
+
+        Map<String, Integer> frequencyMap = new HashMap<>();
+        datesInLast7Days.forEach(date -> frequencyMap.put(date, 0));
+
+
+        for (PaymentInfo paymentInfo : listOfLast7DayInfo) {
+            Integer count = frequencyMap.get(paymentInfo.getPaidDate().toString());
+            if (count == null) {
+                count = 0;
+            }
+
+            frequencyMap.put(paymentInfo.getPaidDate().toString(), count + 1);
+        }
+
+        return frequencyMap;
     }
 }

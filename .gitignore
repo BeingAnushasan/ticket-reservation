@@ -6,6 +6,7 @@ target/
 .mvn
 
 src/frontend/node_modules
+src/frontend-angular/node_modules
 ### STS ###
 .apt_generated
 .classpath

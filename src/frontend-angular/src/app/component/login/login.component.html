@@ -5,7 +5,7 @@
     <article class="card-body mx-auto" style="max-width: 700px;">
       <h4 class="card-title mt-3 text-center">Log In</h4>
 
-      <form>
+      <form (submit)="login()">
         <!-- form-group// -->
         <div class="form-group input-group">
           <div class="input-group-prepend">
@@ -14,7 +14,8 @@
             </span>
           </div>
           <input
-              name=""
+          [(ngModel)]="credentials.username"
+          name="username"
               class="form-control"
               placeholder="Email address or Username"
               type="text"
@@ -29,6 +30,8 @@
             </span>
           </div>
           <input
+          [(ngModel)]="credentials.password"
+          name="password"
               class="form-control"
               placeholder=" password"
               type="password"

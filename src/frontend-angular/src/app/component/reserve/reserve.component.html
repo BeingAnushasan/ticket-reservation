@@ -8,7 +8,7 @@
             <div>
 
               <div class="login-main login-form-card">
-                <form class="theme-form" >
+                <form class="theme-form" (submit)="reserve()">
                   <h4>Reserve A Ticket</h4>
                   <p>Enter details to reserve</p>
                   <div class="form-group">
@@ -17,6 +17,8 @@
                       <div class="col-6">
                         <label class="col-form-label pt-0">From</label>
                         <select
+                          [(ngModel)]="reserveRequest.ticketInfo.source"
+                          name="from"
                             class="form-control"
                             required
                         >
@@ -32,6 +34,8 @@
                       <div class="col-6">
                         <label class="col-form-label pt-0">To</label>
                         <select
+                          [(ngModel)]="reserveRequest.ticketInfo.destination"
+                          name="to"
                             class="form-control"
                             required
                         >
@@ -50,6 +54,7 @@
                   <div class="form-group">
                     <label class="col-form-label">Travel Date</label>
                     <input
+                      name="tDate"
                         class="form-control"
                         type="date"
                         required
@@ -62,6 +67,8 @@
                       <div class="col-6">
                     <label class="col-form-label">Departure Time</label>
                     <select
+                      [(ngModel)]="reserveRequest.ticketInfo.pickupTime"
+                      name="dTime"
                         class="form-control"
                         required
                     >
@@ -74,8 +81,9 @@
                       <div class="col-6">
                         <label class="col-form-label">Arrival Time</label>
                         <h3
+
                         >
-                           5 AM
+                           {{reserveRequest.ticketInfo.arrivalTime}}
                         </h3>
                       </div>
                     </div>
@@ -83,8 +91,9 @@
                   <div class="form-group">
                     <label class="col-form-label">Total Amount</label>
                     <h3
+
                     >
-                      Rs 5
+                      {{reserveRequest.ticketInfo.price}}
                     </h3>
 
                   </div>
@@ -108,7 +117,7 @@
                   </div>
                   <p class="mt-4 mb-0">
                     Already have an account?
-                    
+
                   </p>
                 </form>
               </div>

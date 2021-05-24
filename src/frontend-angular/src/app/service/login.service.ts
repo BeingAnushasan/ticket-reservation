@@ -30,7 +30,7 @@ export class LoginService {
       }));
   }
 
-public get loggedInUserValue(){
+public  loggedInUserValue(){
   return this.loggedUserSubject.value;
 }
   logoutUser() {

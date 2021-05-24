@@ -24,10 +24,15 @@ import java.util.Arrays;
 import java.util.Collections;
 
 @EnableWebSecurity
-@AllArgsConstructor
 class SecurityConfigurer extends WebSecurityConfigurerAdapter implements WebMvcConfigurer {
     private final MyUserDetailsService myUserDetailService;
     private final JWTRequestFilter jwtRequestFilter;
+
+    public SecurityConfigurer(MyUserDetailsService myUserDetailService, JWTRequestFilter jwtRequestFilter) {
+        this.myUserDetailService = myUserDetailService;
+        this.jwtRequestFilter = jwtRequestFilter;
+    }
+
 
     @Override
     public void configure(WebSecurity web) throws Exception {

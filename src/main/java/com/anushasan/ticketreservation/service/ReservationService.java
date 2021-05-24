@@ -39,11 +39,11 @@ public class ReservationService {
 
         ticketInfo.setUserDetails(byUsername);
         TicketInfo savedTicketInfo = ticketRepo.save(ticketInfo);
-
+        Double currentBalance = byUsername.getBalance();
 
         //Payment Processing
-        PaymentUtil.validateBalance(byUsername, ticketInfo.getPrice());
-        Double newBalance = byUsername.getBalance() - ticketInfo.getPrice();
+        PaymentUtil.validateBalance(currentBalance, ticketInfo.getPrice());
+        Double newBalance = currentBalance - ticketInfo.getPrice();
         byUsername.setBalance(newBalance);
 
         userRepo.save(byUsername);

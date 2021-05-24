@@ -12,7 +12,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import java.time.LocalDate;
-import java.util.Date;
 
 @Data
 @AllArgsConstructor

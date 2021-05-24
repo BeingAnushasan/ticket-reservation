@@ -13,4 +13,7 @@ public class Response {
     //    private double total;
     private TicketInfo ticketInfo;
 
+    public Response(String status) {
+        this.status = status;
+    }
 }

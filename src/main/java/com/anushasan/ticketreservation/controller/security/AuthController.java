@@ -20,12 +20,16 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin
 @RequestMapping("/security")
 @Transactional
-@AllArgsConstructor
 public class AuthController {
     private final AuthenticationManager authenticationManager;
     private final MyUserDetailsService userDetailsService;
     private final JWTUtil jwtUtil;
 
+    public AuthController(AuthenticationManager authenticationManager, MyUserDetailsService userDetailsService, JWTUtil jwtUtil) {
+        this.authenticationManager = authenticationManager;
+        this.userDetailsService = userDetailsService;
+        this.jwtUtil = jwtUtil;
+    }
 
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public ResponseEntity<?> createUser( @RequestBody MyUserDetails user ){

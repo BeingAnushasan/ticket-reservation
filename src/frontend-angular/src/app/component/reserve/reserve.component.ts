@@ -28,7 +28,6 @@ export class ReserveComponent implements OnInit {
 
   constructor(private reserveService: ReserveService, private router: Router) { }
   reserve() {
-    console.log(this.reserveRequest)
     this.reserveService.reserve(this.reserveRequest)
       .subscribe(
         data => {
@@ -36,8 +35,6 @@ export class ReserveComponent implements OnInit {
           this.router.navigateByUrl('/').then(r =>alert(data.status));
         },
         error => {
-          // console.log("error is:")
-          // console.log(error);
           alert("Error: "+error.status)
         });
   }

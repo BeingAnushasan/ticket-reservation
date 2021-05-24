@@ -24,8 +24,6 @@ export class LoginService {
       .pipe(map(response=> {
         localStorage.setItem('loggedInUser', JSON.stringify(response.jwt));
         this.loggedUserSubject.next(response)
-        console.log("the response is:")
-        console.log(JSON.stringify(response));
         return response;
       }));
   }

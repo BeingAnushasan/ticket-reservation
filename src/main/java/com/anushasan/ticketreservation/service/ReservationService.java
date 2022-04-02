@@ -22,7 +22,6 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-@AllArgsConstructor
 @Service
 @Transactional
 public class ReservationService {
@@ -31,6 +30,11 @@ public class ReservationService {
     private final TicketRepo ticketRepo;
     private final MyUserRepo userRepo;
 
+    public ReservationService(PaymentRepo paymentRepo, TicketRepo ticketRepo, MyUserRepo userRepo) {
+        this.paymentRepo = paymentRepo;
+        this.ticketRepo = ticketRepo;
+        this.userRepo = userRepo;
+    }
 
     public Response ReservationAcknowledgement(Request request, Principal principal) {
         TicketInfo ticketInfo = request.getTicketInfo();

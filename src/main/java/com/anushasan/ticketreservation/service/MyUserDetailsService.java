@@ -4,8 +4,6 @@ import com.anushasan.ticketreservation.model.User.MyUserDetails;
 import com.anushasan.ticketreservation.model.User.UserPermissions;
 import com.anushasan.ticketreservation.model.User.UserRoles;
 import com.anushasan.ticketreservation.repository.MyUserRepo;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;

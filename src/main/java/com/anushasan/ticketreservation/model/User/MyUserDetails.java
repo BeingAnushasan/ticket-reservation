@@ -33,8 +33,7 @@ public class MyUserDetails {
     public MyUserDetails() {
     }
 
-    public MyUserDetails(String id, String fullName, String phoneNumber, String email, String username, String password, boolean enabled, boolean accountNonExpired, boolean credentialsNonExpired, boolean accountNonLocked, Double balance, Set<UserRoles> userRoles) {
-        this.id = id;
+    public MyUserDetails( String fullName, String phoneNumber, String email, String username, String password, boolean enabled, boolean accountNonExpired, boolean credentialsNonExpired, boolean accountNonLocked, Double balance, Set<UserRoles> userRoles) {
         this.fullName = fullName;
         this.phoneNumber = phoneNumber;
         this.email = email;

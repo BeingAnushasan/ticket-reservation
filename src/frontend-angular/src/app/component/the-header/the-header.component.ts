@@ -9,6 +9,7 @@ import {Router} from "@angular/router";
 })
 export class TheHeaderComponent implements OnInit {
   title :string= 'ReserveIt';
+  amount : number= 200;
 
   constructor(private loginService: LoginService, private router: Router) { }
 

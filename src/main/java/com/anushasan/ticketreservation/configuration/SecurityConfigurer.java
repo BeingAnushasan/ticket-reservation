@@ -3,7 +3,6 @@ package com.anushasan.ticketreservation.configuration;
 
 import com.anushasan.ticketreservation.filter.JWTRequestFilter;
 import com.anushasan.ticketreservation.service.MyUserDetailsService;
-import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -53,7 +52,7 @@ class SecurityConfigurer extends WebSecurityConfigurerAdapter implements WebMvcC
                 .and()
                 .authorizeRequests()
                 .antMatchers("/security/*").permitAll()
-//                .antMatchers( "/h2-console/**" ).permitAll()
+//                .antMatchers( "/" ).permitAll()
                 .anyRequest().authenticated()
                 .and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);

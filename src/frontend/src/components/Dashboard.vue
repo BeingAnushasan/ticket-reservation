@@ -15,7 +15,7 @@ export default {
     return {
       reportFor:"Ticket",
       dataset: [10, 20, 30, 23, 13, 40, 27, 35, 20],
-      date:["s","m","m","m","m","m","m","m","m"],
+      date:["s","m","t","w","t","f","s","s","m"],
     }
   },
   mounted () {

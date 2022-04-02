@@ -15,12 +15,17 @@ import java.security.Principal;
 import java.util.List;
 import java.util.Map;
 
-@AllArgsConstructor
 @RestController
 public class ReservationController {
 
     private final ReservationService reservationService;
     private final MyUserRepo userRepo;
+    
+
+    public ReservationController(ReservationService reservationService, MyUserRepo userRepo) {
+        this.reservationService = reservationService;
+        this.userRepo = userRepo;
+    }
 
     @PostMapping("/api/v1/reserve")
     public Response reserve(@RequestBody Request request, Principal principal) {

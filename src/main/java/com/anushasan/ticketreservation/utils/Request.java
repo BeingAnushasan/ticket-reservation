@@ -6,12 +6,18 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
 public class Request {
     private TicketInfo ticketInfo;
     private PaymentInfo paymentInfo;
+
+    public Request() {
+    }
+
+    public Request(TicketInfo ticketInfo, PaymentInfo paymentInfo) {
+        this.ticketInfo = ticketInfo;
+        this.paymentInfo = paymentInfo;
+    }
 
     public TicketInfo getTicketInfo() {
         return ticketInfo;
